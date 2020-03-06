@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   headers.h                                          :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 11:22:05 by iounejja          #+#    #+#             */
-/*   Updated: 2019/11/06 12:57:37 by iounejja         ###   ########.fr       */
+/*   Updated: 2020/03/05 11:33:15 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-size_t				ft_strlen(char const *s);
+int					ft_strlen(char const *s);
+int					ft_strcmp(char *s1, char *s2);
 int					ft_atoi(const char *str);
 int					ft_isdigit(int c);
 int					ft_isalpha(int c);

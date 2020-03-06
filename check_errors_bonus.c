@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_errors.c                                     :+:      :+:    :+:   */
+/*   check_errors_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/05 18:26:38 by iounejja          #+#    #+#             */
-/*   Updated: 2020/03/06 14:20:31 by iounejja         ###   ########.fr       */
+/*   Created: 2020/03/03 17:33:35 by iounejja          #+#    #+#             */
+/*   Updated: 2020/03/06 14:20:53 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 
 void	invalid_conf(char **conf, t_config *c_i)
 {
@@ -19,25 +19,13 @@ void	invalid_conf(char **conf, t_config *c_i)
 	exit(EXIT_FAILURE);
 }
 
-int		check_col(int color)
-{
-	if (color >= 0 && color <= 255)
-		return (0);
-	return (1);
-}
-
 void	check_prev_conf(char **conf, t_config *c_i)
 {
-	if (c_i->res.width == -1 || c_i->res.height == -1 ||
-	c_i->floor.r == -1 || c_i->ceil.r == -1)
+	if (c_i->res.width == -1 || c_i->res.height == -1)
 		invalid_conf(conf, c_i);
 	if (!c_i->p_n || !c_i->p_s ||
 	!c_i->p_w || !c_i->p_e ||
-	!c_i->p_sp)
-		invalid_conf(conf, c_i);
-	if (check_col(c_i->floor.r) || check_col(c_i->floor.g) ||
-	check_col(c_i->floor.b) || check_col(c_i->ceil.r) ||
-	check_col(c_i->ceil.g) || check_col(c_i->ceil.b))
+	!c_i->p_sp || !c_i->floor || !c_i->ceil)
 		invalid_conf(conf, c_i);
 	if (c_i->res.width > 2560 || c_i->res.height > 1440)
 	{

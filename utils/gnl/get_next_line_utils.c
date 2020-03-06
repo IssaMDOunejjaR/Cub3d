@@ -6,13 +6,13 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 12:09:34 by iounejja          #+#    #+#             */
-/*   Updated: 2020/01/17 13:52:05 by iounejja         ###   ########.fr       */
+/*   Updated: 2020/03/03 16:49:06 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *s)
+int		ft_strlen(const char *s)
 {
 	size_t	i;
 

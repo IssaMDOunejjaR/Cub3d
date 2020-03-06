@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_info.c                                       :+:      :+:    :+:   */
+/*   parse_info_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/04 15:15:00 by iounejja          #+#    #+#             */
-/*   Updated: 2020/03/06 18:38:54 by iounejja         ###   ########.fr       */
+/*   Created: 2020/02/22 14:01:03 by iounejja          #+#    #+#             */
+/*   Updated: 2020/03/06 13:59:53 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 
 int		fail_return(char **tmp)
 {
@@ -25,20 +25,6 @@ int		check_res_col(char **tmp, t_config *c_i)
 		if (c_i->res.width != -1)
 			return (fail_return(tmp));
 		if (get_res(tmp, &c_i->res))
-			return (fail_return(tmp));
-	}
-	if (ft_strncmp(tmp[0], "F", ft_strlen(tmp[0])) == 0)
-	{
-		if (c_i->floor.r != -1)
-			return (fail_return(tmp));
-		if (get_color(tmp, &c_i->floor))
-			return (fail_return(tmp));
-	}
-	if (ft_strncmp(tmp[0], "C", ft_strlen(tmp[0])) == 0)
-	{
-		if (c_i->ceil.r != -1)
-			return (fail_return(tmp));
-		if (get_color(tmp, &c_i->ceil))
 			return (fail_return(tmp));
 	}
 	free_table(tmp);
@@ -75,8 +61,15 @@ int		info(char *info, t_config *c_i, char **conf)
 	char	**tmp;
 
 	tmp = ft_split(info, ' ');
-	if (ft_strcmp(tmp[0], "R") == 0 || (ft_strcmp(tmp[0], "F") == 0) ||
-			(ft_strcmp(tmp[0], "C") == 0))
+	if (ft_strcmp(tmp[0], "F") == 0)
+		c_i->floor = get_path(tmp, c_i->floor);
+	else if (ft_strcmp(tmp[0], "C") == 0)
+		c_i->ceil = get_path(tmp, c_i->ceil);
+	if (ft_strcmp(tmp[0], "F") == 0)
+		return (check_valid_file(c_i->floor, tmp));
+	else if (ft_strcmp(tmp[0], "C") == 0)
+		return (check_valid_file(c_i->ceil, tmp));
+	if (ft_strcmp(tmp[0], "R") == 0)
 		return (check_res_col(tmp, c_i));
 	else if ((ft_strcmp(tmp[0], "NO") == 0) || (ft_strcmp(tmp[0], "SO") == 0) ||
 			(ft_strcmp(tmp[0], "WE") == 0) || (ft_strcmp(tmp[0], "EA") == 0) ||

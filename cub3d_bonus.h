@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/16 19:45:12 by ounejja           #+#    #+#             */
-/*   Updated: 2020/03/06 14:33:23 by iounejja         ###   ########.fr       */
+/*   Created: 2020/02/22 14:02:54 by iounejja          #+#    #+#             */
+/*   Updated: 2020/03/06 14:53:12 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef CUB3D_BONUS_H
+# define CUB3D_BONUS_H
 
 # include <unistd.h>
 # include <stdio.h>
@@ -173,8 +173,8 @@ typedef struct	s_config
 	char		*p_e;
 	char		*p_w;
 	char		*p_sp;
-	t_color		floor;
-	t_color		ceil;
+	char		*floor;
+	char		*ceil;
 	char		**map;
 	int			n_sprite;
 	t_player	*player_info;
@@ -187,7 +187,6 @@ char			**get_info(int fd);
 char			**join_tab(char **tab, char *line);
 char			**tab_init(char **tab);
 void			parse_info(char **conf, t_config *conf_info);
-int				get_color(char **tab, t_color *color);
 int				get_res(char **tab, t_res *res);
 char			*get_path(char **tab, char *path_dest);
 void			free_table(char **tab);

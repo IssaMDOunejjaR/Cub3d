@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_config.c                                     :+:      :+:    :+:   */
+/*   utils_config_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/05 13:51:49 by iounejja          #+#    #+#             */
-/*   Updated: 2020/03/06 18:40:19 by iounejja         ###   ########.fr       */
+/*   Created: 2020/03/03 17:28:23 by iounejja          #+#    #+#             */
+/*   Updated: 2020/03/06 18:40:57 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 
 int		ft_istralpha(char *str)
 {
@@ -36,6 +36,8 @@ void	ft_free(char **conf, t_config *c_i)
 	free(c_i->p_e);
 	free(c_i->p_w);
 	free(c_i->p_sp);
+	free(c_i->floor);
+	free(c_i->ceil);
 	free_table(c_i->map);
 }
 
@@ -48,18 +50,14 @@ void	init(t_config *c_i)
 	c_i->p_e = NULL;
 	c_i->p_w = NULL;
 	c_i->p_sp = NULL;
-	c_i->floor.r = -1;
-	c_i->floor.g = -1;
-	c_i->floor.b = -1;
-	c_i->ceil.r = -1;
-	c_i->ceil.g = -1;
-	c_i->ceil.b = -1;
+	c_i->floor = NULL;
+	c_i->ceil = NULL;
 	c_i->map = tab_init(c_i->map);
 }
 
 int		check_valid_file(char *str, char **tmp)
 {
-	int fd;
+	int	fd;
 
 	fd = open(str, O_RDONLY);
 	if (fd == -1)

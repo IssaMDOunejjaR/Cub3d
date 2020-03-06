@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 12:09:19 by iounejja          #+#    #+#             */
-/*   Updated: 2020/02/04 20:36:51 by iounejja         ###   ########.fr       */
+/*   Updated: 2020/03/06 18:53:00 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,8 @@ int		get_next_line(int fd, char **line)
 	buffer = malloc((sizeof(char) * BUFFER_SIZE) + 1);
 	if (!buffer)
 		return (-1);
-	while (!(s = ft_strchr(save[fd], '\n')) && ((i = read(fd, buffer, BUFFER_SIZE)) > 0))
+	while (!(s = ft_strchr(save[fd], '\n')) &&
+	((i = read(fd, buffer, BUFFER_SIZE)) > 0))
 	{
 		buffer[i] = '\0';
 		tmp1 = save[fd];
