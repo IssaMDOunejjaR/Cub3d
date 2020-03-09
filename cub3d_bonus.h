@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 14:02:54 by iounejja          #+#    #+#             */
-/*   Updated: 2020/03/06 14:53:12 by iounejja         ###   ########.fr       */
+/*   Updated: 2020/03/07 14:06:48 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 # define CUB3D_BONUS_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
-# include <stdbool.h>
 # include <math.h>
 # include "get_next_line.h"
 # include "libft.h"

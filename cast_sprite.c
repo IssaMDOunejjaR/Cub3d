@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/04 15:20:38 by iounejja          #+#    #+#             */
-/*   Updated: 2020/03/06 11:40:44 by iounejja         ###   ########.fr       */
+/*   Updated: 2020/03/09 11:45:11 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static	void	data_s_two(t_config *c_i, double *z_buffer, t_sp *sp)
 	while (sp->stripe < sp->drex)
 	{
 		sp->textx = (int)(256 * (sp->stripe -
-		(-sp->spw / 2 + sp->sp_sc_x)) * c_i->texture[6].width / sp->spw) / 256;
+		(-sp->spw / 2 + sp->sp_sc_x)) * c_i->texture[4].width / sp->spw) / 256;
 		if (sp->trany > 0 && sp->stripe > 0 && sp->stripe <
 		c_i->res.width && sp->trany < z_buffer[sp->stripe])
 		{
@@ -28,9 +28,9 @@ static	void	data_s_two(t_config *c_i, double *z_buffer, t_sp *sp)
 			while (y < sp->drey)
 			{
 				sp->d = (y) * 256 - c_i->res.height * 128 + sp->sph * 128;
-				sp->texty = ((sp->d * c_i->texture[6].height) / sp->sph) / 256;
-				sp->color = c_i->texture[6].
-				data[c_i->texture[6].width * sp->texty + sp->textx];
+				sp->texty = ((sp->d * c_i->texture[4].height) / sp->sph) / 256;
+				sp->color = c_i->texture[4].
+				data[c_i->texture[4].width * sp->texty + sp->textx];
 				if ((sp->color & 0x00FFFFFF) != 0)
 					c_i->conf_mlx->img.data[sp->stripe +
 					c_i->res.width * y] = sp->color;

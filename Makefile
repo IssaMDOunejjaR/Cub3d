@@ -6,11 +6,11 @@
 #    By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/16 18:14:13 by iounejja          #+#    #+#              #
-#    Updated: 2020/03/06 19:05:29 by iounejja         ###   ########.fr        #
+#    Updated: 2020/03/07 17:00:18 by iounejja         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	cub3D.a
+NAME =	Cub3D.a
 EXE  =  cub3D
 SRCS = 	cast_rays.c \
 		check_errors.c \
@@ -92,7 +92,5 @@ clean:
 
 fclean: clean
 	rm -f *.a
-
-reb: fclean bonus
 
 re: fclean all

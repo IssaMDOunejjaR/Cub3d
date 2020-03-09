@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 19:45:12 by ounejja           #+#    #+#             */
-/*   Updated: 2020/03/06 14:33:23 by iounejja         ###   ########.fr       */
+/*   Updated: 2020/03/09 10:34:56 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 # define CUB3D_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
-# include <stdbool.h>
 # include <math.h>
 # include "get_next_line.h"
 # include "libft.h"
@@ -179,7 +177,7 @@ typedef struct	s_config
 	int			n_sprite;
 	t_player	*player_info;
 	t_mlx		*conf_mlx;
-	t_img		texture[6];
+	t_img		texture[4];
 	t_sprite	*sprite;
 }				t_config;
 

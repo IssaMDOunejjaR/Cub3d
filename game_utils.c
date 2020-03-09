@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 11:00:46 by iounejja          #+#    #+#             */
-/*   Updated: 2020/03/05 17:44:06 by iounejja         ###   ########.fr       */
+/*   Updated: 2020/03/09 10:35:40 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	load(t_config *c_i)
 	c_i->texture[3].data =
 		(int*)mlx_get_data_addr(c_i->texture[3].img_ptr, &c_i->texture[3].bpp,
 				&c_i->texture[3].size_l, &c_i->texture[3].endian);
-	c_i->texture[6].data =
-		(int*)mlx_get_data_addr(c_i->texture[6].img_ptr, &c_i->texture[6].bpp,
-				&c_i->texture[6].size_l, &c_i->texture[6].endian);
+	c_i->texture[4].data =
+		(int*)mlx_get_data_addr(c_i->texture[4].img_ptr, &c_i->texture[4].bpp,
+				&c_i->texture[4].size_l, &c_i->texture[4].endian);
 }
 
 void	load_images(t_config *c_i)
@@ -45,9 +45,9 @@ void	load_images(t_config *c_i)
 	c_i->texture[3].img_ptr =
 		mlx_xpm_file_to_image(c_i->conf_mlx->mlx_ptr,
 				c_i->p_w, &c_i->texture[3].width, &c_i->texture[3].height);
-	c_i->texture[6].img_ptr =
+	c_i->texture[4].img_ptr =
 		mlx_xpm_file_to_image(c_i->conf_mlx->mlx_ptr,
-				c_i->p_sp, &c_i->texture[6].width, &c_i->texture[6].height);
+				c_i->p_sp, &c_i->texture[4].width, &c_i->texture[4].height);
 	load(c_i);
 }
 
@@ -56,7 +56,7 @@ int		key_press(int keycode, void *param)
 	t_config	*c_i;
 	double		ms;
 
-	ms = 0.3;
+	ms = 0.2;
 	c_i = (t_config*)param;
 	c_i->map[(int)c_i->player_info->map_y][(int)c_i->player_info->map_x] = '0';
 	if (keycode == 53)

@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 13:22:13 by iounejja          #+#    #+#             */
-/*   Updated: 2020/03/06 17:23:09 by iounejja         ###   ########.fr       */
+/*   Updated: 2020/03/09 14:10:32 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,10 @@ void	data(t_config *c_i, int i)
 void	floor_and_ceil(t_config *c_i)
 {
 	int		i;
-	t_f_c	f_c;
 
 	i = c_i->res.height / 2;
 	while (i < c_i->res.height)
 	{
-		f_c.rdx0 = c_i->player_info->dir_x - c_i->player_info->plane_x;
-		f_c.rdy0 = c_i->player_info->dir_y - c_i->player_info->plane_y;
-		f_c.rdx1 = c_i->player_info->dir_x + c_i->player_info->plane_x;
-		f_c.rdy1 = c_i->player_info->dir_y + c_i->player_info->plane_y;
-		f_c.p = i - c_i->res.height / 2;
-		f_c.pos_z = 0.5 * c_i->res.height;
-		f_c.row_distance = f_c.pos_z / f_c.p;
-		f_c.fsx = f_c.row_distance * (f_c.rdx1 - f_c.rdx0) / c_i->res.width;
-		f_c.fsy = f_c.row_distance * (f_c.rdy1 - f_c.rdy0) / c_i->res.width;
-		f_c.fx = c_i->player_info->map_x + f_c.row_distance * f_c.rdx0;
-		f_c.fy = c_i->player_info->map_y + f_c.row_distance * f_c.rdy0;
 		data(c_i, i);
 		i++;
 	}

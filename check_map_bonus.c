@@ -6,11 +6,36 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/05 15:49:41 by iounejja          #+#    #+#             */
-/*   Updated: 2020/03/06 15:29:16 by iounejja         ###   ########.fr       */
+/*   Updated: 2020/03/07 12:16:39 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
+
+void	check_close_map_four(char **conf, t_config *c_i, int l_tab, int l_str)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (c_i->map[i] != NULL)
+	{
+		j = 0;
+		while (c_i->map[i][j])
+		{
+			if (c_i->map[0][j] != '1' && c_i->map[0][j] != ' ')
+				invalid_conf(conf, c_i);
+			if (c_i->map[i][0] != '1' && c_i->map[i][0] != ' ')
+				invalid_conf(conf, c_i);
+			if (c_i->map[i][l_str - 1] != '1' && c_i->map[i][l_str - 1] != ' ')
+				invalid_conf(conf, c_i);
+			if (c_i->map[l_tab - 1][j] != '1' && c_i->map[l_tab - 1][j] != ' ')
+				invalid_conf(conf, c_i);
+			j++;
+		}
+		i++;
+	}
+}
 
 void	check_close_map_three(char **conf, t_config *c_i, int l_tab, int l_str)
 {
@@ -119,4 +144,5 @@ void	check_map(char **conf, t_config *c_i, int l_tab, int l_str)
 	check_close_map_one(conf, c_i);
 	check_close_map_two(conf, c_i);
 	check_close_map_three(conf, c_i, l_tab, l_str);
+	check_close_map_four(conf, c_i, l_tab, l_str);
 }

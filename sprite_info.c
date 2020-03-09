@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 12:41:50 by iounejja          #+#    #+#             */
-/*   Updated: 2020/03/05 18:25:28 by iounejja         ###   ########.fr       */
+/*   Updated: 2020/03/09 14:58:49 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	nbr_sprite(t_config *c_i)
 
 	i = 0;
 	c_i->n_sprite = 0;
-	while (c_i->map[i] != NULL)
+	while (c_i->map[i])
 	{
 		j = 0;
 		while (c_i->map[i][j])
@@ -68,10 +68,10 @@ void	sort_sprite(t_config *c_i)
 	int			is_sorted;
 
 	is_sorted = 0;
-	i = 0;
 	while (is_sorted == 0)
 	{
 		is_sorted = 1;
+		i = 0;
 		while (i < c_i->n_sprite - 1)
 		{
 			if (c_i->sprite[i].dist < c_i->sprite[i + 1].dist)
