@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 12:41:50 by iounejja          #+#    #+#             */
-/*   Updated: 2020/03/05 18:25:36 by iounejja         ###   ########.fr       */
+/*   Updated: 2020/03/09 19:01:26 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,9 @@ void	sort_sprite(t_config *c_i)
 	int			is_sorted;
 
 	is_sorted = 0;
-	i = 0;
 	while (is_sorted == 0)
 	{
+		i = 0;
 		is_sorted = 1;
 		while (i < c_i->n_sprite - 1)
 		{

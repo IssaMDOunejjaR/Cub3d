@@ -6,7 +6,7 @@
 #    By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/16 18:14:13 by iounejja          #+#    #+#              #
-#    Updated: 2020/03/07 17:00:18 by iounejja         ###   ########.fr        #
+#    Updated: 2020/03/10 18:37:48 by iounejja         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,6 +91,6 @@ clean:
 	rm -f utils/*/*.o
 
 fclean: clean
-	rm -f *.a
+	rm -f $(NAME)
 
 re: fclean all

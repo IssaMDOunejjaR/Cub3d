@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 16:31:48 by iounejja          #+#    #+#             */
-/*   Updated: 2020/03/09 15:43:02 by iounejja         ###   ########.fr       */
+/*   Updated: 2020/03/10 17:40:45 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	window_conf(t_config *c_i)
 	{
 		mlx_hook(c_i->conf_mlx->win_ptr, 2, 0, key_press, c_i);
 		mlx_hook(c_i->conf_mlx->win_ptr, 17, 0, ft_close, (void*)0);
-		//mlx_loop_hook(c_i->conf_mlx->mlx_ptr, key_press, c_i);
 		mlx_loop(c_i->conf_mlx->mlx_ptr);
 	}
 }
@@ -70,6 +69,7 @@ int		main(int argc, char **argv)
 	char		**conf;
 
 	conf = NULL;
+	g_save = 0;
 	if (argc >= 2 && argc <= 3)
 	{
 		if (argc == 3)

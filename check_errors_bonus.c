@@ -6,7 +6,7 @@
 /*   By: iounejja <iounejja@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 17:33:35 by iounejja          #+#    #+#             */
-/*   Updated: 2020/03/06 14:20:53 by iounejja         ###   ########.fr       */
+/*   Updated: 2020/03/09 17:56:48 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 void	invalid_conf(char **conf, t_config *c_i)
 {
 	ft_free(conf, c_i);
-	ft_putstr_fd("Error!\n", 1);
+	ft_putstr_fd("Error\n", 1);
+	ft_putstr_fd("invalid config\n", 1);
 	exit(EXIT_FAILURE);
 }
 
